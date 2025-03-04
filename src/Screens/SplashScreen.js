@@ -12,7 +12,7 @@ const SplashScreen = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome to My App</Text>
+      <Text style={styles.title}>Welcome to JokesApp</Text>
     </View>
   );
 };
