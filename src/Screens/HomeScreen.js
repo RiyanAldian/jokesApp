@@ -58,7 +58,6 @@ const HomeScreen = () => {
           setExpanded(newExpanded);
         }, 500);
       } else {
-        console.log('else');
         setExpanded(newExpanded);
       }
     }
@@ -124,7 +123,6 @@ const HomeScreen = () => {
       return item;
     });
     const dataAmount = newAmount.find(item => item.title === title)?.amount;
-    console.log(newAmount, 'newAmount');
     setAmount(newAmount);
     setCetegoryStatus(title, dataAmount, true);
   };
