@@ -60,9 +60,9 @@ const HomeScreen = () => {
       const category = [];
       const jokesData = [];
       for (let i = 0; i < json.categories.length; i++) {
-        const gg = await getData(json.categories[i], 1);
+        const joke = await getData(json.categories[i], 1);
         category.push(json.categories[i]);
-        jokesData.push(gg);
+        jokesData.push(joke);
       }
       setTop(json.categories[0]);
       setCategories(category);
@@ -102,7 +102,7 @@ const HomeScreen = () => {
   }
 
   const addMoreData = async (title, panjangAmount) => {
-    const gg = await getData(title, panjangAmount + 1);
+    const moreData = await getData(title, panjangAmount + 1);
 
     const newJokes = jokes.map(item => {
       if (item.title === title) {
@@ -110,7 +110,7 @@ const HomeScreen = () => {
         return {
           ...item,
           amount: panjangAmount + 1,
-          data: dataJokes.concat(gg.data),
+          data: dataJokes.concat(moreData.data),
         };
       } else {
         return {
@@ -308,13 +308,13 @@ const styles = StyleSheet.create({
   numbering: {
     fontFamily: 'Nunito-SemiBold',
     fontWeight: '1000',
-    fontSize: 23,
+    fontSize: 22,
   },
   ChildData: {
     paddingLeft: 8,
     fontFamily: 'Nunito-SemiBold',
     fontWeight: '1000',
-    fontSize: 23,
+    fontSize: 22,
   },
   addMore: {
     backgroundColor: 'rgba(111, 202, 186, 1)',
